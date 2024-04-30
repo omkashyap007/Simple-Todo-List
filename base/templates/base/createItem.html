@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <form method = "post">
+            {% csrf_token %}
+
+            Title : <input type = "text" name = "title" id = "id_title">
+            <br>
+            Description : <textarea id = "id_description" name = "description"></textarea>
+            <br>
+            <input type = "submit" value = "Create">
+
+        </form>
+    </body>
+
+</html>

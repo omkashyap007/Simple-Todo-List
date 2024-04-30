@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    {% if message %}
+    {{message}}
+    <br>
+    {% endif %}
+    <form method = "post">
+        {% csrf_token %}
+        UserName : <input type = "text" name = "username"><br>
+        Password : <input type = "password" name = "password"><br>
+        <input type = "submit" value = "Register"><br>
+    </form>
+</body>
+
+</html>

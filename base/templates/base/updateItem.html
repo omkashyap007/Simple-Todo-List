@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form method = "post">
+            {% csrf_token %}
+            Title : 
+            <input type = "text" name = "title" id = "id_title" value = {{item.title}}>
+            <br>
+            Description : <textarea id = "id_description" name = "description" value = {{item.description}}></textarea>
+            <br>
+            Completed : <input type = "radio" id = "id_completed" name = "completed" {% if item.completed == "True" %} checked = "checked" {% endif %}></input>
+            <br>
+            <input type = "submit" value = "Update">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #id_header {
+                display:flex ; 
+                align-items : center; 
+                justify-content : center ; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "id_haeder">
+            <a href = "{% url 'create-item' %}">Create </a>
+        </div>
+        <h1> TODO List </h1>
+        <br>    
+
+        {% for item  in items %}
+        <div>
+            Title : <div id = "id_item_title">
+                {{item.title}}
+            </div>
+            <br>
+            <div id = "id_item_completed">
+                Completed : {{item.completed}}
+            </div>
+            <br>
+            <div id = "id_item_description">
+                Description : {{item.description}}
+            </div>
+            <br>
+            <a href = "{% url 'delete-item' item_id=item.id %}"> Delete </a>
+            <br>
+            <a href = "{% url 'update-item' item_id=item.id %}"> Update </a>
+
+        </div>
+        <hr>
+        {% endfor %}
+
+    </body>
+
+</html>

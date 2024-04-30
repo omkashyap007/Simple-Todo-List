@@ -1,0 +1,15 @@
+<html>
+    <div id = "id_item_title">
+        {{item.title}}
+    </div>
+    <br>
+    <div id = "id_item_completed">
+        {{item.completed}}
+    </div>
+    <a href = "{% url 'home-page' %}"> Cancel </a>
+    <br>
+    <form method = "post">
+        {% csrf_token %}
+        <input type = "submit" value = "Delete">
+    </form>
+</html>
